@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery.tagit example</title>
+        
+        <script type="text/javascript" src="./jquery-1.6.2.min.js"></script>
+        <script type="text/javascript" src="../lib/jquery.tagit.js"></script>
+        <style type="text/css">
+            @import url('./bootstrap-1.1.1.min.css');
+            @import url('../css/tagit.css');
+            
+            
+            #languages-select {
+                margin-top: 30px;
+                width: 530px;
+                margin-bottom: 100px;
+            }
+            
+            .body-content {
+                margin-top: 20px;
+                border-radius: 4px;
+                background: whitesmoke;
+                border: solid 1px #CCC;
+            }
+            
+            .body-content > div {
+                margin: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="span16 columns body-content">
+                    <div>
+                        <p>
+                            Select the programming languages you know.
+                            (You could also <a href="#" id="add-all-link">add all we know</a>.)
+                        </p>
+                        <form action="#">
+                            <fieldset>
+                                <div class="clearfix">
+                                    <label>Experience in</label>
+                                    <div class="input">
+                                        <ul id="languages-select" class="fake-input" tabindex="1">
+                                            <li>Java</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <div class="actions">
+                                <a href="#" class="btn primary">
+                                    Let us know
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            
+            var tags = ["Java", "Javascript", "Python", "C", 
+                       "C++", "Ruby", "CSS", "HTML", "C#", 
+                       "Visual Basic", "Prolog", "Smalltalk", 
+                       "Scala", "Haskel", "Bash"];
+            
+            $("#languages-select").tagit({
+                tags: tags,
+                field: "language"
+            });
+            
+            $("#add-all-link").click(function(event) {
+                $.each(tags, function(i, e) {
+                    $("#languages-select").tagit("addTag", e);
+                });
+                
+                event.preventDefault();
+            });
+        </script>
+    </body>
+</html>
