@@ -1,12 +1,14 @@
 jQuery Tagit
 ============
 
-Plugin for [jQuery](http://jquery.com/) for tag input fields, e.g. like the 
-ones used by [stackoverflow](http://stackoverflow.com/).
+[jQuery](http://jquery.com/) plugin for tag input fields, e.g. the 
+ones used by [Stackoverflow](http://stackoverflow.com/).
 
 ![screenshot](https://github.com/Nikku/jquery-tagit/raw/master/docs/sample.jpg)
 
 CSS markup is based on [bootstrap](http://twitter.github.com/bootstrap/) and built with [Less](http://lesscss.org/) support.
+
+Inspired by [Tag-it!](http://aehlke.github.com/tag-it/).
 
 Features
 --------
