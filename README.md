@@ -6,7 +6,7 @@ ones used by [stackoverflow](http://stackoverflow.com/).
 
 ![screenshot](https://github.com/Nikku/jquery-tagit/raw/master/docs/sample.jpg)
 
-Markup is based on [bootstrap](http://twitter.github.com/bootstrap/).
+CSS markup is based on [bootstrap](http://twitter.github.com/bootstrap/) and built with [Less](http://lesscss.org/) support.
 
 Features
 --------
@@ -73,3 +73,5 @@ Control the `ul` element using jQuery:
     });
 </script>
 ```
+
+See the [full example](https://github.com/Nikku/jquery-tagit/raw/master/example/example1.html).
