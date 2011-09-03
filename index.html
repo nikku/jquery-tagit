@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery Tagit plugin</title>
+
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+        <script type="text/javascript" src="jquery.tagit.js"></script>
+
+        <style type="text/css">
+            @import url('http://twitter.github.com/bootstrap/assets/css/bootstrap-1.1.1.min.css');
+            @import url('tagit.css');
+
+            #languages-select {
+                width: 530px;
+            }
+
+            h1 {
+                padding-left: 20px;
+                margin-top: 30px;
+                margin-bottom: 20px;
+            }
+
+            .body-content > div {
+                margin-top: 20px;
+                border-radius: 4px;
+                background: whitesmoke;
+                border: solid 1px #CCC;
+            }
+
+            .body-content > div > * {
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+
+            .body-content > div > *:first-child {
+                margin-top: 20px;
+            }
+
+            .tagit {
+                width: 400px;
+                display: inline-block;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="span16 columns body-content">
+                    <h1>jQuery Tagit plugin</h1>
+                    <div>
+                        <p>
+                            This plugin provides a form element to input tags and offers 
+                            auto completion for them. 
+                        </p>
+                        <h2>Basic functionality</h2>
+                        <p>
+                            Use a <code>ul</code> element to embed the tag input to. 
+                            Add the <code>fake-input</code> class (if you use the provided css files)
+                            to make the element look like an input. Make the element
+                            focusable by adding a <code>tabindex</code> attribute.
+                        </p>
+                        <script src="https://gist.github.com/1189872.js?file=gistfile1.html"></script>
+
+                        <h4>Result</h4>
+
+                        <div class="clearfix">
+                            <ul id="languages1" class="fake-input" tabindex="1"></ul>
+                            <em>won't auto-complete</em>
+                        </div>
+
+                        <script type="text/javascript">
+                            $("#languages1").tagit();
+                        </script>
+
+                        <h2>Auto-completion</h2>
+                        <p>Use the <code>tags</code> option to provide tags for auto-completion</p>
+                        <script src="https://gist.github.com/1189917.js?file=gistfile1.html"></script>
+
+                        <h4>Result</h4>
+                        <div class="clearfix">
+                            <ul id="languages2" class="fake-input" tabindex="2"></ul>
+                            <em>will auto-complete and still allow custom tags</em>
+                        </div>
+
+                        <script type="text/javascript">
+                            var tags = ["Java", "Javascript", "Python", "C", 
+                                "C++", "Ruby", "CSS", "HTML", "C#", 
+                                "Visual Basic", "Prolog", "Smalltalk", 
+                                "Scala", "Haskel", "Bash"];
+                            $("#languages2").tagit({
+                                tags: tags
+                            });
+                        </script>
+
+                        <h2>Serialization</h2>
+                        <p>
+                            For each tag a hidden input is created whos name 
+                            defaults to <code>tag</code> and can be changed 
+                            by providing a <code>field</code> option to the 
+                            tagit constructor.
+                        </p>
+
+                        <h2>Prepopulating tag inputs</h2>
+                        <p>
+                            Add <code>li</code> child elements to a tagit <code>ul</code> 
+                            to make them become initial elements of the tag input
+                        </p>
+                        <script src="https://gist.github.com/1190020.js?file=gistfile1.txt"></script>
+                        <h4>Result</h4>
+                        <div class="clearfix">
+                            <ul id="languages3" class="fake-input" tabindex="1">
+                                <li>C++</li>
+                                <li>Java</li>
+                            </ul>
+                            <em>pre-populated tag input</em>
+                        </div>
+
+                        <script type="text/javascript">
+                            $("#languages3").tagit();
+                        </script>
+                        
+                        <h2>Programmatically controlling the tag input</h2>
+                        <p>
+                            The plugin makes the methods <code>addTag(name)</code>, <code>removeTag(name)</code> and <code>getTags()</code>
+                            available via the <code>tagit</code> method.
+                        </p>
+                        
+                        <script src="https://gist.github.com/1190860.js?file=gistfile1.html"></script>
+                        
+                        <h4>Result</h4>
+                        <div class="clearfix">
+                            <ul id="languages4" class="fake-input" tabindex="1">
+                                <li>Java</li>
+                            </ul>
+                            <em>programatically controllable tag input</em>
+                        </div>
+                        <div class="clearfix">
+                            <a href="#" onclick="$('#languages4').tagit('addTag', 'C++'); return false">Add C++ tag</a> |
+                            <a href="#" onclick="$('#languages4').tagit('removeTag', 'Java'); return false">Remove Java tag</a> |
+                            <a href="#" onclick="alert('Added tags: ' + $('#languages4').tagit('getTags')); return false">Show selected tags</a>
+                        </div>
+                        <script type="text/javascript">
+                            $("#languages4").tagit();
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
