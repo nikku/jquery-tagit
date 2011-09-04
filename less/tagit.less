@@ -1,14 +1,14 @@
 /**
  * Css styles for jquery.tagit plugin
  * Extending bootstrap (http://twitter.github.com/bootstrap/)
- *
- * REQUIRES bootstrap.less css file for compilation
  */
+
+// REQUIRES bootstrap.less css file for compilation
+// @import "bootstrap/bootstrap.less";
 
 @import "fake-form.less";
 
 .tagit {
-    
     list-style: none;
 
     &.fake-input {
@@ -19,23 +19,24 @@
 
     li {
         display: inline-block;
-    }
     
-    > li.tag {
-        margin: 3px 4px 3px 0;
-        padding: 0 2px 0 2px;
+        &.tag {
+        
+            margin: 3px 4px 3px 0;
+            padding: 0 2px 0 2px;
 
-        line-height: 18px;
-        cursor: default;
+            line-height: 18px;
+            cursor: default;
 
-        border: solid 1px #AAA;
-        border-radius: 2px;
-        background: #DDD;
-        color: #333;
-    }
+            border: solid 1px #AAA;
+            border-radius: 2px;
+            background: #DDD;
+            color: #333;
 
-    li.tag .close {
-        margin-left: 5px;
+            .close {
+                margin-left: 5px;
+            }
+        }
     }
 
     .tagit-edit-handle {

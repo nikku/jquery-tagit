@@ -3,7 +3,10 @@
  * Extending bootstrap (http://twitter.github.com/bootstrap/)
  */
 
- .form-dummy fieldset {
+/**
+ * Provides both, elements which look like form inputs when they are not and
+ * cleared styles for form elements (no shadow etc.)
+ */.form-dummy fieldset {
   margin-bottom: 0;
 }
 .form-dummy fieldset > div {
@@ -18,7 +21,7 @@
   height: 14px;
   padding: 6px;
 }
-form .fake-input {
+.fake-input {
   display: inline-block;
   width: 210px;
   margin: 0;
@@ -26,14 +29,14 @@ form .fake-input {
   font-size: 13px;
   line-height: 18px;
   height: 18px;
-  color: #595959;
+  color: gray;
   border: 1px solid #ccc;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
   background-color: white;
 }
-form .fake-input {
+.fake-input {
   -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
   -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
   transition: border linear 0.2s, box-shadow linear 0.2s;
@@ -41,14 +44,14 @@ form .fake-input {
   -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
-form .fake-input.focused {
+.fake-input.focused {
   outline: none;
   border-color: rgba(82, 168, 236, 0.8);
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
   -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
 }
-form div.error, form input.no-style {
+form div.error, input.no-style {
   -webkit-transition: none;
   -moz-transition: none;
   transition: none;
@@ -57,9 +60,9 @@ form div.error, form input.no-style {
   box-shadow: none;
 }
 form div.error input.no-style,
-form input.no-style,
+input.no-style,
 form div.error input.no-style:focus,
-form input.no-style:focus {
+input.no-style:focus {
   border: none;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -94,7 +97,7 @@ form div.error .fake-input.focused {
 .tagit li {
   display: inline-block;
 }
-.tagit > li.tag {
+.tagit li.tag {
   margin: 3px 4px 3px 0;
   padding: 0 2px 0 2px;
   line-height: 18px;
