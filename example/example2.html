@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery.tagit example</title>
+        
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+        <script type="text/javascript" src="../lib/jquery.tagit.js"></script>
+        
+        <style type="text/css">
+            @import url('http://twitter.github.com/bootstrap/assets/css/bootstrap-1.1.1.min.css');
+            @import url('../css/tagit.css');
+            
+            #languages-select {
+                width: 530px;
+            }
+            
+            .body-content {
+                margin-top: 20px;
+                border-radius: 4px;
+                background: whitesmoke;
+                border: solid 1px #CCC;
+            }
+            
+            .body-content > div {
+                margin: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="span16 columns body-content">
+                    <div>
+                        <p>
+                            You can only add items in the tags option if "restricted" is true.
+                        </p>
+                        <form action="#">
+                            <fieldset>
+                                <div class="clearfix">
+                                    <label>Experience in</label>
+                                    <div class="input">
+                                        <ul id="languages-select" class="fake-input" tabindex="1">
+                                            <li>Java</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            
+            var tags = ["Java", "Javascript", "Python", "C", 
+                       "C++", "Ruby", "CSS", "HTML", "C#", 
+                       "Visual Basic", "Prolog", "Smalltalk", 
+                       "Scala", "Haskel", "Bash"];
+            
+            $("#languages-select").tagit({
+                tags: tags,
+                field: "language",
+                restricted: true
+            });
+            
+        </script>
+    </body>
+</html>
