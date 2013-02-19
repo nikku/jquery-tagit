@@ -16,6 +16,7 @@ Features
 * Autocompletion
 * Mouse and keyboard handling
 * Visual integration into bootstrapped form environments
+* Allowing a strict limit of items you can tag.
 
 Requirements
 ------------
