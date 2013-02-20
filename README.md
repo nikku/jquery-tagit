@@ -16,6 +16,7 @@ Features
 * Autocompletion
 * Mouse and keyboard handling
 * Visual integration into bootstrapped form environments
+* Allowing a strict limit of items you can tag. *restricted:true*
 
 Requirements
 ------------
@@ -70,7 +71,8 @@ Control the `ul` element using jQuery:
     
         $("#languages-select").tagit({
             tags: tags,
-            field: "language"
+            field: "language",
+            restricted: false // Setting this to true will enable restricting of the tags to the previous tag field.
         });
     });
 </script>
